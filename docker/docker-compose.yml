@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  service-cart:
+    image: postgres:latest
+    container_name: service-customer-registration
+    restart: always
+    environment:
+      POSTGRES_USER: dio_db_creator
+      POSTGRES_PASSWORD: ^L#yix031tmv
+      POSTGRES_DB: service-customer
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./service-customer.sql:/docker-entrypoint-initdb.d
